@@ -34,6 +34,7 @@ release = '2.0'
 extensions = [
 	'sphinx.ext.autodoc',
 	'sphinx.ext.autosectionlabel',
+	'sphinx.ext.intersphinx',
 	'sphinx.ext.napoleon',
 	'sphinx.ext.viewcode',
 	'sphinx_copybutton',
@@ -91,6 +92,17 @@ autodoc_inherit_docstrings = False  # so overridden methods won't pop up
 # -- Options for sphinx.ext.autosectionlabel -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html
 autosectionlabel_prefix_document = True
+
+# -- Options for sphinx.ext.intersphinx -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
+intersphinx_mapping = {
+	'python': ('https://docs.python.org/3', (None, './python3-objects.inv'))
+}
+# disable all auto external references
+# implicit ref for general std domain is bad
+intersphinx_disabled_reftypes = [
+	'std:*'
+]
 
 
 def autodoc_setup(app):
