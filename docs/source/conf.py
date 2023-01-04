@@ -28,6 +28,9 @@ release = '2.0'
 
 # -- General configuration ---------------------------------------------------
 
+# https://docs.readthedocs.io/en/stable/environment-variables.html
+RTD: bool = os.environ.get('READTHEDOCS', False)
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your customize
 # ones.
@@ -73,9 +76,8 @@ html_theme_options = {
 
 # -- Options for sphinx-intl -------------------------------------------------
 
-# https://docs.readthedocs.io/en/stable/builds.html#build-environment
 # available languages: en_US, zh_CN
-language = os.environ.get('READTHEDOCS_LANGUAGE', 'en_US')
+language: str = os.environ.get('READTHEDOCS_LANGUAGE', 'en_US')
 
 # po files will be created in this directory
 # path is example but recommended.
@@ -96,7 +98,7 @@ autosectionlabel_prefix_document = True
 # -- Options for sphinx.ext.intersphinx -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
 intersphinx_mapping = {
-	'python': ('https://docs.python.org/3', (None, './python3-objects.inv'))
+	'python': ('https://docs.python.org/3', None if RTD else (None, './python3-objects.inv'))  # always fetch from internet in rtd env
 }
 # disable all auto external references
 # implicit ref for general std domain is bad
