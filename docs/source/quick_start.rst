@@ -12,7 +12,7 @@ MCDR requires python3 runtime. The python version need to be at least 3.6
 Install
 -------
 
-MCDR is available in `pypi <https://pypi.org/project/mcdreforged>`__. It can be installed via ``pip`` command
+MCDR is available in `PyPI <https://pypi.org/project/mcdreforged>`__. It can be installed via ``pip`` command
 
 .. code-block:: bash
 
@@ -74,5 +74,5 @@ For Chinese users, you can use tuna mirror to speed up the upgrading too
 
     pip install mcdreforged -U -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-Development builds are available in `Test PyPi <https://test.pypi.org/project/mcdreforged/#history>`__, you can install them if you have special needs
+Development builds are available in `Test PyPI <https://test.pypi.org/project/mcdreforged/#history>`__, you can install them if you have special needs
 
